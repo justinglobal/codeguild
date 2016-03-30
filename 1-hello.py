@@ -1,13 +1,18 @@
-print('What is your name?')
-name = input()
+#this program receives user input and prints a response
 
-greeting = 'So nice to meet you, ' + name
-print(greeting)
+#pre-refactoring code:
 
+# print('What is your name?')
+# name = input()
+#
+# greeting = 'So nice to meet you, ' + name
+# print(greeting)
 
-##
-input('greeting')
+def get_name():
+    """Prompt user to input name text and store that name as variable"""
+    print('What is your name?')
+    return input()
 
+name = get_name()
 
-print('greeting')
-input()
+print('So nice to meet you, ' + name)

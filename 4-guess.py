@@ -1,45 +1,51 @@
+#
 # import random
 #
-# secret = random.randint(1, 100)
+# answer = random.randint(1, 2)
 #
-# guess = 0
+# print('This is a guessing game')
+# print('Guess a number:')
 #
-# while guess != secret:
-#     print('guess a number')
+# guess = int(input())
+#
+# while guess != answer:
+#     if guess > answer:
+#         print('Too high, dude.')
+#     elif guess < answer:
+#         print('Too low, yo.')
+#     print('Guess again:')
 #     guess = int(input())
-#
-#     if guess < secret:
-#         print('Too low.')
-#     elif gues > secret:
-#         print('Too high.')
-#     else:
-#         print('Correct')
+# if guess == answer:
+#     print('Correct! You are a winner!')
 
-
-
+########
 
 import random
+def generate_answer():
+    """Generate random number within specified range."""
+    return random.randint(1,2)#this is set to a small set of integers for testing
 
-secret_number = random.randint(1, 100)
+def input_guess():
+    """Prompts user to input text as their guess for the answer."""
+    print('Guess a number:')
+    return int(input())
 
-# use variable 'numberofguesses' and set it to 3 to start
-
-print('This is a guessing game')
-print('Guess a number:')
-
-guess = int(input())
-
-while guess != secret_number:
-# use and above with 'while'
-
-    if guess > secret_number:
-        print('Too high, dude.')
-
-    elif guess < secret_number:
+def compute_response(guess, answer):
+    """Computes response for incorrect guess."""
+    if guess > answer:
+        print('Too high, duuude.')
+    elif guess < answer:
         print('Too low, yo.')
 
-    print('Guess again:')
-    guess = int(input())
+def correct_answer(guess, answer):
+    """Computes response for correct answer."""
+    if guess == answer:
+        print('Correct! You are a winner!')
+    #return guess == answer
 
-if guess == secret_number:
-    print('Correct! You are a winner!')
+answer = generate_answer()
+guess = input_guess()
+while guess != answer:
+    compute_response(guess, answer)
+    guess = input_guess()
+correct_answer(guess, answer)

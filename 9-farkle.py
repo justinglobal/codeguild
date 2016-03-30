@@ -22,8 +22,7 @@ all_dice = [dice1 , dice2 , dice3 , dice4 , dice5]
 #all_dice = [1, 1, 1, 1, 1]
 #can make this shorter
 #how to count values in a string or list
-
-all_dice_string = str(all_dice)
+#all_dice_string = str(all_dice)
 
 number_of_1s = all_dice.count(1)
 number_of_2s = all_dice.count(2)
@@ -34,8 +33,7 @@ number_of_6s = all_dice.count(6)
 
 if number_of_1s == 3:
     total_score = total_score + 1000
-
-    #fix one scoring error here
+#fix one scoring error here
 if number_of_2s == 3:
     total_score = total_score + 200
 if number_of_3s == 3:
@@ -45,7 +43,6 @@ if number_of_4s == 3:
 if number_of_5s == 3:
     total_score = total_score + 500
 #fix 5 scoring error here
-
 if number_of_6s == 3:
     total_score = total_score + 600
 

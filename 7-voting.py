@@ -35,14 +35,10 @@ while accept_input:
 
 candidate_dict.pop('done')
 
-#print(candidate_dict)
-
 for name in candidate_dict:
     print('Candidate' , name , ' has ' , candidate_dict[name] , 'votes')
 
 candidate_dict.items()
-# winner =
-#
 vote_total = candidate_dict.values()
 #print(candidate_dict.get(max(candidate_dict.items())))
 winner = max(candidate_dict, key=candidate_dict.get)
