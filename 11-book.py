@@ -45,7 +45,8 @@ def make_top_ten(words_to_count):
 #this code is covered by what David suggested below
     ###start refactoring here!!!!! this is David's tip to improve code above figure it out
     def get_count_from_pair(pair):
-        return pair[1]
+        word, count = pair
+        return count
     return sorted(words_to_count.items(), key=get_count_from_pair, reverse=True)[:10]
 
 
@@ -80,7 +81,7 @@ print (sorted(words_to_count.values(), reverse=True)[:10])
 # print [list(x) for x in zip((sorted(words_to_count, key=words_to_count.get, reverse=True)[:10]), (sorted(words_to_count.values(), reverse=True)[:10]))]
 print ('These are the top ten most frequent words in the text and their frequency:')
 for item in (top_ten):
-  print (item[0], ', '.join(map(str, item[1:])))
+  print (item[0], item[1])
 
 # [list(x) for x in zip(list1, list2)]
 # [[1, 'a'], [2, 'b'], [3, 'c']]
