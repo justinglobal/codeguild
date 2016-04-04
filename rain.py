@@ -37,7 +37,7 @@ def make_rain_date_only(str_rain_data):
     return ( [x[0: 11] for x in str_rain_data])
 def make_year_rain_dict(rain_date_only, date_rain_dict):
     """Makes a dict of k:year v:total rainfall from rain_date_only & date_rain_dict"""
-#CLEAN UP THE CODE BELOW IN THIS FUNCTION DEF
+#CLEAN UP THE CODE BELOW IN THIS FUNCTION DEF?
     year_rain_dict = {}
     for date in rain_date_only:
         year_rain_dict[date[-4:]] = 0
@@ -66,8 +66,6 @@ def make_daymonth_rain_dict(daymonth_only, date_rain_dict):
 def make_daymonth_count_dict(date_rain_dict):
     """Makes a dict from the DD-MMM (daymonth) and counts the number of entries to make average"""
     daymonth_count_dict = {}
-    # for daymonth in daymonth_only:
-    #     daymonth_count_dict[daymonth] = []
     for fulldate, count in date_rain_dict.items():
         daymonth = fulldate[:6]
         if daymonth not in daymonth_count_dict:
@@ -128,7 +126,6 @@ print ('The day of any year with the highest total rainfall is:' , max_any_year 
 req_date = get_req_date()
 ammount_display = calc_ammont_display(req_date)
 print ('Rain total for' , req_date , 'is' , ammount_display , 'inches.')
-
 
 prediction_date = get_prediction_date()
 prediction_rain = get_prediction_rain(daymonth_count_dict, prediction_date)
