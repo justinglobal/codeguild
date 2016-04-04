@@ -79,20 +79,6 @@ year_max_rain_ammount = get_year_max_rain_ammount(year_rain_dict)
 daymonth_only = make_daymonth_only(str_rain_data)
 #question: does the above code make a de-duped list? i think it does
 daymonth_rain_dict = make_daymonth_rain_dict(daymonth_only, date_rain_dict)
-# print ((daymonth_only)[0:20])
-# print (daymonth_only.count('27-MAR'))
-#
-# # str.count(sub[, start[, end]])
-#
-# # print (daymonth_rain_dict)
-#
-# print ((rain_date_only)[0:20])
-# print (rain_date_only.count('27-MAR'))
-
-
-# this code meant well but doesn't work
-# daymonth_count = for date, rain in date_rain_pairs.count()
-# print (daymonth_count)
 
 def make_daymonth_count_dict(date_rain_dict):
     """ """
@@ -141,8 +127,98 @@ prediction_date = get_prediction_date()
 # weather = {'01-JUN': [0.11, 0.16, 0.0, 0.0], '09-MAY': [0.0, 0.16, 0.0], '03-JAN': [0.08, 0.01, 0.03, 0.0], '12-SEP': [0.0, 0.0, 0.0, 0.0], '28-FEB': [0.0, 0.01, 0.15, 0.14], '01-FEB': [0.01, 0.31, 0.08, 0.0]}
 # date = '01-JUN'
 
+###put def's here
 print ( (sum(daymonth_count_dict[prediction_date])) / (len(daymonth_count_dict[prediction_date])) )
 
+    # for daymonth, count in daymonth_count_dict.items():
+    # (sum(daymonth_count_dict.values())) / ()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# print ((daymonth_only)[0:20])
+# print (daymonth_only.count('27-MAR'))
+#
+# # str.count(sub[, start[, end]])
+#
+# # print (daymonth_rain_dict)
+#
+# print ((rain_date_only)[0:20])
+# print (rain_date_only.count('27-MAR'))
+
+
+# this code meant well but doesn't work
+# daymonth_count = for date, rain in date_rain_pairs.count()
+# print (daymonth_count)
+
+# def make_daymonth_count_dict(date_rain_dict):
+#     """ """
+#     daymonth_count_dict = {}
+#     # for daymonth in daymonth_only:
+#     #     daymonth_count_dict[daymonth] = []
+#     for fulldate, count in date_rain_dict.items():
+#         daymonth = fulldate[:6]
+#         if daymonth not in daymonth_count_dict:
+#             daymonth_count_dict[daymonth] = []
+#         daymonth_count_dict[daymonth].append(count)
+#     return daymonth_count_dict
+#
+# daymonth_count_dict = make_daymonth_count_dict(date_rain_dict)
+# # print (daymonth_count_dict)
+#
+# def get_prediction_date():
+#     """"gets a date from user to predict weather based on past averages"""
+#     print ("Input a date for weather forecast. Use DD-MMM with MMM in all caps and a # for DD.")
+#     return input()
+#
+# # below is the functional print statements for problem
+# #below code finds day/month with highest total rainfall
+# print ('The day of any year with the highest total rainfall is:' , (max(daymonth_rain_dict, key=daymonth_rain_dict.get)))
+# #below code find the integer total for day/month with highest total rainfall
+# print ('With' , (max(daymonth_rain_dict.values())) , 'inches of rain')
+# #below is the functional ending print statements
+# print ('From 12-FEB-2002 to present day the date with the highest rainfall total is' , date_max_rain , 'with' , date_max_rain_ammount , 'inches' )
+# print ('The year with the highest total rainfall is' , year_max_rain , 'with' , year_max_rain_ammount , 'inches')
+#
+# #code below gets date from user
+# print ('Enter date for rain total of that day - use DD-MMM-YYYY with month all caps & # for day and year')
+# req_date = input()
+# #code below converts req_date from 1/100th of an inch into inches for display
+# date_display = (date_rain_dict[req_date])
+#
+# print ('Rain total for' , req_date , 'is' , date_display , 'inches.')
+# #alternate way to print:
+# # for item in (top_ten):
+# #   print (item[0], item[1])
+#
+# prediction_date = get_prediction_date()
+#
+# # def find_date_rain_avg(daymonth_count_dict, prediction_date):
+# #
+# # weather = {'01-JUN': [0.11, 0.16, 0.0, 0.0], '09-MAY': [0.0, 0.16, 0.0], '03-JAN': [0.08, 0.01, 0.03, 0.0], '12-SEP': [0.0, 0.0, 0.0, 0.0], '28-FEB': [0.0, 0.01, 0.15, 0.14], '01-FEB': [0.01, 0.31, 0.08, 0.0]}
+# # date = '01-JUN'
+#
+# print ( (sum(daymonth_count_dict[prediction_date])) / (len(daymonth_count_dict[prediction_date])) )
+#
     # for daymonth, count in daymonth_count_dict.items():
     # (sum(daymonth_count_dict.values())) / ()
 
