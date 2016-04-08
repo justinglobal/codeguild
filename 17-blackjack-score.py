@@ -24,76 +24,137 @@ class Card:
         return 'Card({},{})'.format(self.card_type, self.card_suit)
     def make_card_different_somehow(self):
         print (self.card_type , self.card_suit)
+    def make_another_change(self):
+        print (self.card_type.replace('J', '10'))
+        #make 'all cards here?'
+# class Hand:
+#     def __init__(self, hand_list):
+#         self.hand_list = hand_list
+#     def __eq__(self, other_entry):
+#         return (self.hand_list == other_entry.hand_list)
+#     def __repr__(self):
+#         return 'Hand({})'.format(self.hand_list)
+#     def add_card_to_hand(self, current_card):
+#         return self.hand_list.append(current_card)
+#     def foo_function(self):
+#         print (self.hand_list)
+#         print (self.hand_list[1].card_type)
+#     def bar_function(self):
+#         return self.hand_list[1] # .card_type
+class Hand:
+    def __init__(self, hand_list):
+        self.hand_list = hand_list
+    def __eq__(self, other_entry):
+        return (self.hand_list == other_entry.hand_list)
+    def __repr__(self):
+        return 'Hand({})'.format(self.hand_list)
+    def add_card_to_hand(self, current_card):
+        return self.hand_list.append(current_card)
+    def foo_function(self):
+        print (self.hand_list)
+        print (self.hand_list[1].card_type)
+    def bar_function(self):
+        return self.hand_list[1] # .card_type
+    # def make_card_type_list(self):
+    #     return [int(item.card_type.replace(
+    #     'J', '10').replace(
+    #     'Q', '10').replace(
+    #     'K', '10').replace(
+    #     'A', '11')) for item in self.hand_list]
 
-def funcitons_are_awesome:
-    print "yeah boy"
+    def make_cards_ints(self):
+        return [int(item.card_type.replace(
+        'J', '10').replace(
+        'Q', '10').replace(
+        'K', '10')) for item in self.hand_list]
 
-
-
+    def calc_score(self):
 
 
     # def make_cards_ints(self):
-    #     return (self.card_type.replace(['K', '10']).replace(['Q', '10']).replace(['J', '10']))
-###### ** -> Start here...def score_hand should be a top-level function??
-###             we already have current_hand up there
-class Hand:
-    def __init__(self, hand_group):
-        self.hand_group = hand_group
+    #     if sum([int(item.card_type.replace(
+    #     'J', '10').replace(
+    #     'Q', '10').replace(
+    #     'K', '10').replace(
+    #     'A', '11')) for item in self.hand_list]) <= 21:
+    #         return [int(item.card_type.replace(
+    #         'J', '10').replace(
+    #         'Q', '10').replace(
+    #         'K', '10').replace(
+    #         'A', '11')) for item in self.hand_list]
+    #     else:
+    #         return [int(item.card_type.replace(
+    #         'J', '10').replace(
+    #         'Q', '10').replace(
+    #         'K', '10').replace(
+    #         'A', '1')) for item in self.hand_list]
+#two cleaner steps
+#logic errors ex: what if two aces? returns min sum...
+# card_type to score
+def main():
+    current_card = Card('K', 'S')
+    current_hand = Hand([])
+    print (current_card)
+    print (current_hand)
+    # print ('1_____________________________________')
+    Hand.add_card_to_hand(current_hand, current_card)
+    # print (current_hand)
+    # print ('2_____________________________________')
 
-    def __eq__(self, other_entry):
-        return (self.hand_group == other_entry.hand_group)
-    def __repr__(self):
-        return 'Hand({})'.format(self.hand_group)
-    def add_card_to_hand(self):
-        return self.hand_group.append(current_card)
-    def foo_function(self):
-        print ((self.hand_group)[0: ])
-    def bar_function(self):
-        return ((self.hand_group)[1])
-    # def score_hand(self):
-    #     if card in current_hand == card in ['K', 'Q', 'J']
-    #         card = 10
-    # def pre_hand_for_scoring(self):
-    #     return self.hand_group.int
+    current_card = Card('K', 'H')
+    Hand.add_card_to_hand(current_hand, current_card)
+    # current_card = Card('A', 'D')
+    # Hand.add_card_to_hand(current_hand, current_card)
+    print (current_hand)
+    # print ('3_____________________________________')
+# def ghgj():
+    # Hand.foo_function(current_hand)
+    # print ('4_____________________________________')
+    # Card.make_card_different_somehow(current_card)
+    #
+    # Card.make_card_different_somehow(Hand.bar_function(current_hand))
+    #
+    # print ('5_____________________________________')
+    # Card.make_another_change(Hand.bar_function(current_hand))
+    # print ('6_____________________________________')
+    # print (Hand.bar_function(current_hand))
+    print ('7_____________________________________')
+    # print ('score:' , sum(Hand.make_cards_ints(current_hand)))
+    print (Hand.make_cards_ints(current_hand))
 
-##### ** Go here next....above are possible ways to do the score in Hand class
-
-# current_card = Card('10', 'S' , (int('10')))
-current_card = Card('10', 'S')
-current_hand = Hand([])
-print (current_card)
-print (current_hand)
-
-Hand.add_card_to_hand(current_hand)
-print (current_hand)
-# current_card = Card('J', 'H', (int('10')))
-current_card = Card('J', 'H')
-Hand.add_card_to_hand(current_hand)
-print (current_hand)
-Hand.foo_function(current_hand)
-
-Card.make_card_different_somehow(current_card)
-
-Card.make_card_different_somehow(Hand.bar_function(current_hand))
-
-# Card.make_cards_ints(Hand.bar_function(current_hand))
-
-# score = Card.score_hand(current_hand)
-# print (score)
-
-# def add_card_to_hand(current_card, card_list):
-#     card_list.append(current_card)
-#     return card_list
-
-# card_list = []
-
-# card_list = add_card_to_hand(current_card, card_list)
-# # card_list = [current_card, current_card]
-# # num_list = [3, 4]
-# print (card_list)
+###start here this works
+#     print (calc_score(current_hand))
 #
-# current_card = Card('5', 'D')
-# card_list = add_card_to_hand(current_card, card_list)
-# current_hand = Hand(card_list)
-# # current_hand = Hand(('5', 'K', '10', 'Q'))
-# print (current_hand.hand_group)
+#
+# def calc_score(current_hand):
+#     return sum(Hand.make_card_type_list(current_hand))
+
+    #david reminder
+    # def add_int_to_list(l, i):
+    #     l.append(i)
+    #
+    # l = []
+    # add_int_to_list(l, 5)
+
+
+    # score = Card.score_hand(current_hand)
+    # print (score)
+
+    # def add_card_to_hand(current_card, card_list):
+    #     card_list.append(current_card)
+    #     return card_list
+
+    # card_list = []
+
+    # card_list = add_card_to_hand(current_card, card_list)
+    # # card_list = [current_card, current_card]
+    # # num_list = [3, 4]
+    # print (card_list)
+    #
+    # current_card = Card('5', 'D')
+    # card_list = add_card_to_hand(current_card, card_list)
+    # current_hand = Hand(card_list)
+    # # current_hand = Hand(('5', 'K', '10', 'Q'))
+    # print (current_hand.hand_list)
+
+main()
