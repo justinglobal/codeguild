@@ -25,7 +25,8 @@ class Card:
     def make_card_different_somehow(self):
         print (self.card_type , self.card_suit)
 
-
+def funcitons_are_awesome:
+    print "yeah boy"
 
 
 
