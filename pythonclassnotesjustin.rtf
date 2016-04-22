@@ -1365,4 +1365,125 @@ ex:\
 \
 Class is a collection of functions.\
 Instance of a class/object is a bag of variables.\
-}
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Encapsulation\
+\
+	
+\b0 classes version of functions being contracts\
+\
+	One person can work on implementation. One person can work on use.\
+	They agree on contract, they don\'92t need to worry directly abut each other\'92s work.\
+\
+	The functions in a class can define contract.\
+\
+	The person that uses the functions doesn\'92t care how they are made.\
+\
+	Short form of class method calling is cool\'85you don\'92t have to know the exact class the instance has.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf0 Pycharm IDE\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0 \cf0 from pycharm website\
+\
+\'91project\'92 is a directory/folder\
+\
+new project>code guild directory\
+\
+hot tips \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 \
+Module\
+\
+.py files are Modules\
+\
+	It\'92s like copying the module code at the top of your code
+\b0 \
+\
+in the target .py file you can import any top level item using the name of the Python film without the .py\
+\
+	modules can be nested\
+	__init__.py allows directory to be module\
+		then you can > import directory_name.module_name\
+
+\b Using PyCharm tools
+\b0 \
+test file: in PyCharm must be configured, including test path, which is the name of these file you are making\
+\
+when test program uses *Class* methods to test = \
+	import unittest\
+	class TestName(unittest.TestCase):\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs24 \cf0 \
+\
+\
+
+\fs36 Note:
+\fs24  check out Kyle\'92s rain animation in this file: {\field{\*\fldinst{HYPERLINK "https://github.com/bizzcat/codeguild/blob/master/final_rainfall.py"}}{\fldrslt https://github.com/bizzcat/codeguild/blob/master/final_rainfall.py}}\
+\
+\
+\'91magic methods\'92 \
+	__getitem__\
+\
+	zip makes an object that acts like a list\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs36 \cf0 Into. Web Applications\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs28 \cf0 3 parts\
+	1. Database\
+		\
+		
+\b0 Where data is persistently stored.\
+		\
+		It is another program that has a very generic interface that lets you save and fetch 		data.
+\b \
+		\
+		
+\b0 We will probably use PostgreSQL
+\b \
+\
+	2. Back-End\
+\
+		
+\b0 Web server - **business logic** - what happens\
+		\
+		Dynamically generates web pages.\
+		When a person goes to yourwebsite.com/ponies it will figure out what\'92s on \'91/ponies\'92 		might fetch database and return content associated with it for display\
+\
+		Web framework - figure out how to generate output *content* from an input *path*
+\b \
+\
+	3. Front-End\
+\
+		HTML/CSS/JS\
+\
+		
+\b0 HTML - actual structured content\
+		CSS describes the presentation of the content\
+		JS is code for the user\'92s web browser to run to enable complex interactions with user.
+\b \
+\
+		\
+Interfact Principles\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0 \cf0 \
+Basic HTML/CSS/JS\
+\
+HTML - structures existing text\
+CSS - specifies how things are displayed\
+\
+Mozilla developer tutorial: {\field{\*\fldinst{HYPERLINK "http://apps.timwhitlock.info/emoji/tables/unicode"}}{\fldrslt http://apps.timwhitlock.info/emoji/tables/unicode}}
+\b \
+		}
