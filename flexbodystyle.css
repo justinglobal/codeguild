@@ -1,0 +1,19 @@
+
+ /*background-image: url(http://www.shirtfactorypdx.com/wp-content/uploads/2013/11/shirtbackground_tile_1_small.jpg);*/
+ body {
+   display: flex;
+   min-height: 97vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+ header, footer {
+   background: #ccc;
+ }
+ h1 {
+   padding: 10px;
+   margin: 0;
+ }
