@@ -312,7 +312,7 @@ git diff [hash from thing you want to compare to WD]
 
 ‘Q’ takes you back to the prompt
 
-**help - to quit: ‘escape’ + ‘:q!’ at prompt
+**help - to quit: ‘escape’ + ‘:q!’ at prompt**
 
 
 git remote -v lists local push/fetch repos
@@ -737,7 +737,7 @@ verbs + nouns
 	3. identify arguments
 
 
-**Describing a function you define
+**Describing a function you define**
 
 use “”” some description “””
 
@@ -1405,6 +1405,13 @@ var addTwo - function(x) {
 	return x + two;
 }
 
+**better way**
+
+function addTwo (x) {
+	var two = 2;
+	return x+ two;
+}
+
 #Prototype Methods
 similar to python...look it up
 
@@ -1424,3 +1431,58 @@ var name = 'david'
 #JS in browser
 
 must make baby html page to run JS in browser
+
+#Anonymous functions
+
+functions are values!
+
+values that represent instructions
+
+see example of sorting for python
+
+#JS libraries
+
+*underscore*
+
+is actual an underscore *_*
+
+has several methods see notes & underscorejs.org
+
+each, map, keys, values, pairs
+
+# Basic Document Object model
+
+document. makes whole page an Object
+
+change DOM change website
+
+# jQuery
+JQuery is a libary - *$* global variable
+
+jquery simplifies js/dom interactions
+
+can select element which is a css selector
+
+examples:
+	var allItems =$("div")
+
+	var pictureElement = $("my-picture")
+
+	$("div.yello")
+
+# jquery element creation
+
+var newImage = $("<img>")
+var newParagraph = $("<p></p>")
+
+.jquery() will select elements according to method
+
+# Callback
+
+runs jquery only when event happens
+
+Registering evenet handler
+Code below changes background to blue.
+	$("button").on("click", function ()) {
+		#("body").css("background" , "blue")
+	}
