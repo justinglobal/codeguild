@@ -1486,3 +1486,18 @@ Code below changes background to blue.
 	$("button").on("click", function ()) {
 		#("body").css("background" , "blue")
 	}
+
+# Lodash
+
+use this instead of underscore
+see david's notes lodash.md
+
+# Object Methods
+
+see david notes
+
+# JS Object prototypes
+
+can inherit missing values for an object 
+
+see david notes
