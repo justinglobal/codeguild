@@ -1498,6 +1498,14 @@ see david notes
 
 # JS Object prototypes
 
-can inherit missing values for an object 
+can inherit missing values for an object
 
 see david notes
+
+# Writing interactive JS and using event handlers and 'callbacks'
+
+make functions to perform operations on data
+
+put functions in 'main' functions
+*THEN*
+write event handlers and callbacks
