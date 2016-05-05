@@ -1,0 +1,18 @@
+h1 {
+  font-family: monospace;
+}
+#coolsec{
+  color: blue
+}
+.spicy {
+  font-size: 30px;
+}
+.hot {
+  color: red;
+}
+ul > li {
+	text-shadow: 1px 1px 1px gray;
+}
+#shadow {
+	text-shadow: 1px 1px 10px gray;
+}

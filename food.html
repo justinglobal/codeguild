@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <section><h1>This is a food questionaire.</h1>
+  </section>
+  <form>
+    <div>
+      <fieldset>
+        <label for="dinner">What did you have for dinner?</label>
+        <input type=text name="dinner" />
+      </fieldset>
+    </div>
+    <div>
+      <fieldset>
+        <label for="foodtype">Check all that were in your dinner:</label><br>
+        <input type="checkbox" name="foodtype" value="Meat" checked>Meat<br>
+        <input type="checkbox" name="foodtype" value="Potatoes">Potatos<br>
+        <input type="checkbox" name="foodtype" value="Broccoli">Broccoli<br>
+        <input type="checkbox" name="foodtype" value="Cheese">Cheese<br>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset for="fooddomain">
+        <legend>Are you a vegan?</legend>
+          <input type="radio" name="fooddomain" value="notvegan" checked>Not Vegan<br>
+          <input type="radio" name="fooddomain" value="vegan">Vegan<br>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset>
+        <label for="icecreamflavors">Select your favorite ice cream flavor</label>
+        <select name="icecreamflavors">
+          <option value="rocky_road">Rocky Road</option>
+          <option value="chocolate" selected>Chocolate</option>
+          <option value="vanilla">Vanilla</option>
+        </select>
+      </fieldset>
+      <br>
+    </div>
+    <div>
+      <label for="bestdinner">Tell us a little bit about your best dinner ever</label>
+      <textarea name="bestdinner">best din</textarea>
+    </div>
+    <br>
+    <!-- <div>
+      <button type="button" onclick="alert('Advice: You better get some food in you homie.')">
+        <strong>CLICK HERE IF YOU ARE HUNGRY</strong>
+      </button>
+    </div> -->
+    <div>
+      <button type="button" onclick="alert('Advice: You better get some food in you homie.')">
+        <img src="http://static.tumblr.com/1bd1b615e6da70dd71dc84fd2f47c80d/zpmncfu/oxNng9hfv/tumblr_static_95p88l86si88ks4w4wws04wk8.png" height="20">
+        <br><strong>CLICK HERE<br>IF YOU ARE HUNGRY</strong>
+      </button>
+    </div>
+    <br>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+    <div>
+      <label action="chopsticks_pic.asp">Please upload an image of your favorite chopsticks</label>
+        <input type="file" name="pic" accept="image/*">
+        <input type="submit">
+    </div>
+  </form>
+</body>
+</html>
