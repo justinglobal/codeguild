@@ -1,0 +1,24 @@
+body {
+   margin: 0 auto;
+}
+
+.row {
+   display: flex;
+   border: none;
+   width: auto;
+}
+
+img {
+   /* Set every img control to be selected for use with the flexbox display type */
+   border: black solid thin;
+   /*width: 200px;
+   height: 150px;*/
+   box-sizing: border-box;
+}
+
+.gameImage {
+}
+
+.highlight {
+   border: aqua solid 5px;
+}

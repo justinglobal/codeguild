@@ -1,85 +1,96 @@
-"use strict";
+'use strict';
+// 1. Input Functions
 
-function getReminderString() {
-    return $("#reminder-input").val();
+/*
+ * Get the reminder string the user typed in.
+ */
+function getReminderInput() {
+  return $('#reminder-input').val();
 }
 
-function createDelLink(reminderElement) {
-    var delLink = $("<a></a>").text("X").attr("href", "");
-    delLink.on("click", function (event) {
-        event.preventDefault();
-        reminderElement.remove("li");
-        // reminderElement.toggleClass("done");
-    });
-    return delLink;
+// 2. Transform Functions
+
+// We don't have any since the input reminder string is exactly what we want to display.
+
+// 3. Create Functions
+
+/*
+ * Create a new "done" link that will cross off the given reminder list item.
+ */
+function createDoneLink(reminderItem) {
+  var doneLink = $('<a></a>');
+  doneLink.text('X');
+  doneLink.attr('href', '');
+  // Part of setting up the "done" link is ensureing it can cross the item off.
+  // It's okay to register a callback here.
+  doneLink.on('click', function(event) {
+    // Prevent clicking on the link from causing the browswer to change the page.
+    event.preventDefault();
+    crossOffReminder(reminderItem);
+  });
+  return doneLink;
 }
 
-function createReminderElement(reminderString) {
-    var reminderElement = $("<li></li>").text(reminderString);
-    var delLink = createDelLink(reminderElement);
-    return reminderElement.append(delLink);
+/*
+ * Create a new reminder list item for a string.
+ */
+function createReminderItem(reminderString) {
+  var reminderItem = $('<li></li>');
+  reminderItem.text(reminderString);
+  var doneLink = createDoneLink(reminderItem);
+  reminderItem.append(doneLink);
+  return reminderItem;
 }
 
-function addReminderElementToList(reminderElement) {
-    $("#reminder-list").append(reminderElement);
+// 4. Modify Functions
+
+/*
+ * Add a reminder list item to the page.
+ */
+function addReminderItemToList(reminderItem) {
+  $('#reminder-list').append(reminderItem);
 }
 
-function getReminderStringAndAddElementToList() {
-    var reminderString = getReminderString();
-    var reminderElement = createReminderElement(reminderString);
-    addReminderElementToList(reminderElement);
+/*
+ * Clear the reminder input box.
+ */
+function clearReminderInput() {
+  $('#reminder-input').val('');
 }
 
-function registerGlobalEventHandlers() {
-    $("form").on("submit", function (event) {
-        event.preventDefault();
-        getReminderStringAndAddElementToList();
-    });
+/*
+ * Cross out a given reminder list item.
+ */
+function crossOffReminder(reminderItem) {
+  reminderItem.toggleClass('done');
 }
 
-$(document).ready(function () {
-    registerGlobalEventHandlers();
-});
+// 5. Main Functions
 
+/*
+ * Main functions which performs the action of adding a new reminder item with what the user put in the text box.
+ */
+function runAddReminder() {
+  var reminderString = getReminderInput();
+  var reminderItem = createReminderItem(reminderString);
+  addReminderItemToList(reminderItem);
+  clearReminderInput();
+}
 
-// "use strict";
-//
-// function getReminderString() {
-//     return $("#reminder-input").val();
-// }
-//
-// function createDelLink(reminderElement) {
-//     var delLink = $("<a></a>").text("X").attr("href", "");
-//     delLink.on("click", function (event) {
-//         event.preventDefault();
-//         reminderElement.toggleClass("done");
-//     });
-//     return delLink;
-// }
-//
-// function createReminderElement(reminderString) {
-//     var reminderElement = $("<li></li>").text(reminderString);
-//     var delLink = createDelLink();
-//     return reminderElement.append(delLink);
-// }
-//
-// function addReminderElementToList(reminderElement) {
-//     $("#reminder-list").append(reminderElement);
-// }
-//
-// function getReminderStringAndAddElementToList() {
-//     var reminderString = getReminderString();
-//     var reminderElement = createReminderElement(reminderString);
-//     addReminderElementToList(reminderElement);
-// }
-//
-// function registerGlobalEventHandlers() {
-//     $("form").on("submit", function (event) {
-//         event.preventDefault();
-//         getItemStringAndAddElement();
-//     });
-// }
-//
-// $(document).ready(function () {
-//     registerGlobalEventHandlers();
-// });
+// 6. Register Functions
+
+/*
+ * Tell the browser when to run our main function.
+ *
+ * Note that we can't register the "crossing off" action here because the list items haven't been created yet.
+ */
+function registerInitialEventHandlers() {
+  $('#reminder-form').on('submit', function(event) {
+    // Submitting a form, by default, reloads the page. Prevent this.
+    event.preventDefault();
+    runAddReminder();
+  });
+}
+
+// Actually run the event handler registration code when the HTML is done loading.
+$(document).ready(registerInitialEventHandlers);
