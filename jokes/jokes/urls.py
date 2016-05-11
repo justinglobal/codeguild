@@ -16,6 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^jokes/test', views.render_page),
+    url(r'^jokes/form/', views.render_form_page, name='form_page'),
+    url(r'^jokes/submit/', views.render_ack, name='submit'),
+    url(r'^jokes/index/' , views.render_index, name='index')
 ]
+
+# url(r'^$', views.render_index, name='index'),
+# url(r'^form/$', views.render_form, name='form_page'),
+# url(r'^form/submit$', views.render_ack),

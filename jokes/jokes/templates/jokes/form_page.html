@@ -1,0 +1,46 @@
+
+<!-- form_page.html for jokes project -->
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Joke Submit Form</title>
+    <link rel="stylesheet" href="{% static 'jokes/style.css' %}">
+  </head>
+  <body>
+    <h1>Hi, {{ name }}!</h1>
+    <p>Enter joke setup and punchline and click submit</p>
+    <!-- <form>
+      <input type=textarea value="type joke setup here">
+      <input type=textarea value="type joke punchline here">
+      <button name="button">submit</button>
+    </form> -->
+    <form action="/jokes/submit/" method="post">
+        {% csrf_token %}
+        <textarea name="comment_text"></textarea>
+        <input type="submit">
+    </form>
+  </body>
+</html>
+
+
+<!-- {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Comment Form</title>
+        <link rel="stylesheet" href="{% static 'comments/style.css' %}">
+    </head>
+    <body>
+        <h1>Post a comment:</h1>
+        <form action="/form/submit" method="post">
+            {% csrf_token %}
+            <textarea name="comment_text"></textarea>
+            <input type="submit">
+        </form>
+    </body>
+</html> -->
