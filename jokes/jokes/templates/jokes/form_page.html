@@ -13,19 +13,23 @@
   <body>
     <h1>Hi, {{ name }}!</h1>
     <p>Enter joke setup and punchline and click submit</p>
-    <!-- <form>
-      <input type=textarea value="type joke setup here">
-      <input type=textarea value="type joke punchline here">
-      <button name="button">submit</button>
-    </form> -->
     <form action="/jokes/submit/" method="post">
         {% csrf_token %}
-        <textarea name="comment_text"></textarea>
+        <h3>enter joke setup</h3>
+        <textarea name="setup_text"></textarea>
+        <h3>enter joke punchline</h3>
+        <textarea name="punchline_text"></textarea>
         <input type="submit">
     </form>
   </body>
 </html>
 
+
+<!-- <form action="/jokes/submit/" method="post">
+    {% csrf_token %}
+    <textarea name="comment_text"></textarea>
+    <input type="submit">
+</form> -->
 
 <!-- {% load staticfiles %}
 <!DOCTYPE html>

@@ -13,28 +13,34 @@ def render_page(request):
 
 def render_form_page(request):
     """Renders the HTML from Template file form_page"""
-    context = {'name': 'justin'}
+    context = {'name': 'comedian'}
     # context = {'name': request.GET['name']}
     return render(request, 'jokes/form_page.html' , context)
 
 def render_ack(request):
-    """Accepts a POST of a joke and renders the ack page."""
-    comment_text = request.POST['comment_text']
+    """Accepts a POST of a setup_text and punchline_text and renders the ack page."""
+    setup_text = request.POST['setup_text']
+    punchline_text = request.POST['punchline_text']
 
-    logic.save_comment(comment_text)
+    logic.save_joke(setup_text , punchline_text)
 
     context = {
-        'comment_text': comment_text,
+        'setup_text': setup_text,
+        'punchline_text': punchline_text
     }
     return render(request, 'jokes/ack.html', context)
 
 def render_index(request):
     """Renders the listing of previous jokes page.
+    Makes all_setups and all_punchlines variables from jokes_dict via logic.py.
+    defines context dict for rendering page.
     """
-    comments = logic.get_all_comments()
+    all_setups = logic.get_all_setups()
+    all_punchlines = logic.get_all_punchlines()
 
     context = {
-        'comments': comments,
+        'setups': all_setups,
+        'punchlines': all_punchlines
     }
     return render(request, 'jokes/index.html', context)
 

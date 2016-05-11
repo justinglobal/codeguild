@@ -1,3 +1,15 @@
-blockquote {
+#punchlines {
   font-style: italic;
+}
+
+.showpunchlines {
+
+}
+
+#flexthis {
+  display: flex;
+}
+
+#flexset {
+  flex: 1;
 }

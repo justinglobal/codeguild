@@ -7,15 +7,23 @@
     <head>
         <meta charset="utf-8">
         <title>Comment Form</title>
-        <link rel="stylesheet" href="{% static 'comments/style.css' %}">
+        <link rel="stylesheet" href="{% static 'jokes/style.css' %}">
     </head>
     <body>
         <h1>Comments</h1>
-        <a href="{% url 'form_page' %}">Post</a>
-        {% for comment_text in comments %}
+        <a href="{% url 'form_page' %}">Post a joke</a>
         <section>
-            <blockquote>{{ comment_text }}</blockquote>
+          {% for setup_text in setups %}
+          <div>
+              <blockquote>{{ setup_text }}</blockquote>
+          </div>
+          {% endfor %}
+          {% for punchline_text in punchlines %}
+          <div>
+            <blockquote class="showpunchlines" id="punchlines" hidden>{{ punchline_text }}</blockquote>
+            <button name="button" onclick="showpunchlines.visible">Click to show punchline</button>
+          </div>
+          {% endfor %}
         </section>
-        {% endfor %}
     </body>
 </html>

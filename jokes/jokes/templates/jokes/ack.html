@@ -6,11 +6,14 @@
     <head>
         <meta charset="utf-8">
         <title>Joke Form - Submitted!</title>
-        <link rel="stylesheet" href="{% static 'comments/style.css' %}">
+        <link rel="stylesheet" href="{% static 'jokes/style.css' %}">
     </head>
     <body>
         <h1>Your joke was submitted!</h1>
-        <a href="{% url 'index' %}">Back to List</a>
-        <blockquote>{{ comment_text }}</blockquote>
+        <a href="{% url 'index' %}">Go to joke list</a>
+        <h3>joke setup</h3>
+        <blockquote>{{ setup_text }}</blockquote>
+        <h3>joke punchline</h3>
+        <blockquote>{{ punchline_text }}</blockquote>
     </body>
 </html>
