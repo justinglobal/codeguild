@@ -1509,3 +1509,74 @@ make functions to perform operations on data
 put functions in 'main' functions
 *THEN*
 write event handlers and callbacks
+
+# Virtualenv
+
+	- isolated environment to develop full applications and keep track of dependencies
+	- see david notes
+
+# web basics
+
+	- HTTP, post, get, respones (ex 404)
+
+# Django
+
+	- views - functions that takes http request and returns an HTTP response
+		vews.py must be in urls.py file
+
+		in urls.py use 'from . import views'
+
+	Django Routes
+
+		_ url function
+
+# Regular expressions
+
+when writing out regex literals in Python, always use 'r'
+
+# regular expressions tell django how to route mapping from url path to specific view function
+
+# set up and installing django
+
+install steps
+1. make project directory
+2. create new virtial env
+3. install django
+4. run admin-django setup (see below for how)
+
+**important**
+
+views take in input, perform transformation, then output
+
+use code below:
+install django: > pip(3) install django
+
+# RUN django server
+use code below:
+
+python manage.py runserver
+
+in settings.py
+under INSTALLED_APPS
+ put application root/name on first line
+
+# django templates and AJAX
+	can do the same
+
+# django templates
+
+html file exists, but can use variables, functions, etc
+
+# AJAX
+
+uses jquery
+
+#demo using both templates and ajax to do the same thing
+
+## using templates
+	views.py
+		make index page: function is 'render_index'
+		make form page: function is called 'render_form'
+		make ack: function is called ''
+
+		these get referenced in urls.py file

@@ -1,0 +1,7 @@
+print('Please input first word: ')
+word1 = input()
+print('Please input second word')
+word2 = input()
+print('Please input third word')
+word3 = input()
+print('The ' + word1 + ' is ' + word2 + ' next to the ' + word3)

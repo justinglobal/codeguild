@@ -1,0 +1,50 @@
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction -->
+<!DOCTYPE html>
+<!-- <html lang="en">
+<body>
+  <form>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+    </div>
+    <div>
+      <label for="msg">Message:</lable>
+      <textarea id="msg">Default Text.</textarea>
+    </div>
+    <div>
+      <label for="format">Format:</label>
+      <select id="format">
+        <option value="email">Email</option>
+        <option value="telegram">Telegram</option>
+        <option value="letter">Snail Mail</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">Send your message</button>
+    </div>
+  <form>
+</body>
+</html> -->
+<form method="post"
+      enctype="application/x-www-form-urlencoded"
+      action="https://pizza.example.com/order.cgi">
+ <p><label>Customer name: <input name="custname" required></label></p>
+ <p><label>Telephone: <input type=tel name="custtel"></label></p>
+ <p><label>E-mail address: <input type=email name="custemail"></label></p>
+ <fieldset>
+  <legend> Pizza Size </legend>
+  <p><label> <input type=radio name=size required value="small"> Small </label></p>
+  <p><label> <input type=radio name=size required value="medium"> Medium </label></p>
+  <p><label> <input type=radio name=size required value="large"> Large </label></p>
+ </fieldset>
+ <fieldset>
+  <legend> Pizza Toppings </legend>
+  <p><label> <input type=checkbox name="topping" value="bacon"> Bacon </label></p>
+  <p><label> <input type=checkbox name="topping" value="cheese"> Extra Cheese </label></p>
+  <p><label> <input type=checkbox name="topping" value="onion"> Onion </label></p>
+  <p><label> <input type=checkbox name="topping" value="mushroom"> Mushroom </label></p>
+ </fieldset>
+ <p><label>Preferred delivery time: <input type=time min="11:00" max="21:00" step="900" name="delivery" required></label></p>
+ <p><label>Delivery instructions: <textarea name="comments" maxlength=1000></textarea></label></p>
+ <p><button>Submit order</button></p>
+</form>
