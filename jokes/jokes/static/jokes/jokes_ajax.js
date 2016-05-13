@@ -19,22 +19,42 @@ function getPunchlineText() {
 function appendSetup(setupText) {
   var blockquote = $('<blockquote></blockquote>');
   blockquote.text(setupText);
-  $('body').append(blockquote);
+  $('section').append(blockquote);
 }
 // defines variable blockquote using jquery element assignment as <blockquote>
 // inserts punchlineText into blockquote
 // appends new blockquote element to body element
 function appendPunchline(punchlineText) {
+  var container = $('<div></div>')
   var blockquote = $('<blockquote></blockquote>');
   blockquote.text(punchlineText);
-  $('body').append(blockquote);
+  blockquote.css('visibility' , 'hidden');
+  blockquote.addClass('showpunchlines');
+  $('section').append(container);
+  $('section > div').append(blockquote);
 }
 
 // this function wants to make a hide button and define it's behavior on click
-// function makeHideButton() {
-//   var hideButton = $('<button></button>');
-//   $('body').append.(hideButton);
-// }
+function makeHideButton() {
+  var hideButton = $('<button></button>');
+  hideButton.text('show punchline');
+  $(hideButton).on('click', function(event) {
+    $(event.target).siblings().css('visibility' , 'visible');
+  });
+  // need to add a div around punchlines blockquote and it's show button
+  // $(hideButton).on('click', function() {
+  //   $(showpunchlines).css('visibility' , 'visible');
+  // });
+  $('section > div').append(hideButton);
+}
+
+// setup what happens when you click the button to show
+// function
+// $('div.setup'**change this**).on('click', function(event) {
+//   $(event.target).siblings().css(
+//     'visibility', 'visible'
+//   );
+// });
 
 // 4. Modify Function - posts setup and puncline text using .get on /ajax/submit url
 function postJokeText(setupText , punchlineText) {

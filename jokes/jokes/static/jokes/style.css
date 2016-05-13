@@ -3,10 +3,9 @@
 }
 
 .showpunchlines {
-
 }
 
-section {
+.flexsection {
   display: flex;
 }
 
