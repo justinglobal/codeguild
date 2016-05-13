@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Joke Library</title>
+        <link rel="stylesheet" href="{% static 'jokes/style.css' %}">
+    </head>
+    <body>
+        <h1>Joke Library</h1>
+        <form id="joke-form">
+            <textarea id="setup-text">enter setup text here</textarea>
+            <textarea id="punchline-text">enter punchline text here</textarea>
+            <input type="submit">
+        </form>
+        <!-- <section>
+          <div class="flexjokes">
+            {% for setup_text in setups %}
+            <div>
+              <blockquote>{{ setup_text }}</blockquote>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="flexjokes">
+            {% for punchline_text in punchlines %}
+            <div>
+              <blockquote class="showpunchlines" id="punchlines_{{ forloop.counter }}" style="display: block">{{ punchline_text }}</blockquote>
+              <button onclick="makeVisible({{ forloop.counter }})" name="button">Click to show/hide punchline</button>
+            </div>
+            {% endfor %}
+          </div>
+        </section> -->
+        <!-- style="visibility: hidden" -->
+
+        <!-- {% for comment_text in comments %}
+        <section>
+            <blockquote>{{ comment_text }}</blockquote>
+        </section>
+        {% endfor %} -->
+
+        <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+        <!-- <script src="{% static 'jokes/jokes.js' %}"></script> -->
+        <script src="{% static 'jokes/jokes_ajax.js' %}"></script>
+    </body>
+</html>

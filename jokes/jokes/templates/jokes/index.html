@@ -10,20 +10,33 @@
         <link rel="stylesheet" href="{% static 'jokes/style.css' %}">
     </head>
     <body>
-        <h1>Comments</h1>
+        <h1>Joke Library</h1>
         <a href="{% url 'form_page' %}">Post a joke</a>
         <section>
-          {% for setup_text in setups %}
-          <div>
-              <blockquote>{{ setup_text }}</blockquote>
+          <div class="flexjokes">
+            {% for setup_text in setups %}
+            <div>
+                <blockquote>{{ setup_text }}</blockquote>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-          {% for punchline_text in punchlines %}
-          <div>
-            <blockquote class="showpunchlines" id="punchlines" hidden>{{ punchline_text }}</blockquote>
-            <button name="button" onclick="showpunchlines.visible">Click to show punchline</button>
+          <div class="flexjokes">
+            {% for punchline_text in punchlines %}
+            <div>
+              <blockquote class="showpunchlines" id="punchlines_{{ forloop.counter }}" style="display: none">{{ punchline_text }}</blockquote>
+              <button onclick="makeVisible({{ forloop.counter }})" name="button">Click to show/hide punchline</button>
+            </div>
+            <!-- style="visibility: hidden" -->
+            {% endfor %}
           </div>
-          {% endfor %}
         </section>
+        <!-- <script>
+        function makeVisible() {
+          document.getElementById("punchlines").style.visibility="visible";
+        }
+          document.getElementById("punchline_button").addEventListener("click", makeVisible)
+        </script> -->
+        <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
+        <script src="{% static 'jokes/jokes.js' %}"></script>
     </body>
 </html>

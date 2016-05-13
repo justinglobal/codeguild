@@ -17,12 +17,16 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from . import views
+from . import ajax_views
 
 urlpatterns = [
     url(r'^jokes/test', views.render_page),
     url(r'^jokes/form/', views.render_form_page, name='form_page'),
     url(r'^jokes/submit/', views.render_ack, name='submit'),
-    url(r'^jokes/index/' , views.render_index, name='index')
+    url(r'^jokes/index/' , views.render_index, name='index'),
+
+    url(r'^ajax/', ajax_views.render_index, name='ajax_index'),
+    url(r'^ajax/submit', ajax_views.render_ack),
 ]
 
 # url(r'^$', views.render_index, name='index'),

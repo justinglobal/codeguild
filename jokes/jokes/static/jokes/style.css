@@ -6,10 +6,10 @@
 
 }
 
-#flexthis {
+section {
   display: flex;
 }
 
-#flexset {
+.flexjokes {
   flex: 1;
 }

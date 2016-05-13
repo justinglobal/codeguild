@@ -1580,3 +1580,8 @@ uses jquery
 		make ack: function is called ''
 
 		these get referenced in urls.py file
+
+# hot tips ajax and django edition
+
+## avoid ID selection
+**see the 2016-05-11 hot tips for some handy jquery submit code**
