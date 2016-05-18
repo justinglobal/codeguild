@@ -1548,8 +1548,9 @@ install steps
 
 views take in input, perform transformation, then output
 
-use code below:
-install django: > pip(3) install django
+**important not in david notes**
+use code below to install django:
+pip(3) install django
 
 # RUN django server
 use code below:
@@ -1585,3 +1586,22 @@ uses jquery
 
 ## avoid ID selection
 **see the 2016-05-11 hot tips for some handy jquery submit code**
+
+# django models
+
+from django.db import models
+
+they are classes
+
+## dango shell
+
+allows debugging, including models
+
+python manage.py shell
+
+access models from shell (runs )
+from APP_DIRECTORY import models
+
+in views
+	render functions get variables from models
+		use 'template_args'
