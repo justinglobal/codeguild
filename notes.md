@@ -1605,3 +1605,10 @@ from APP_DIRECTORY import models
 in views
 	render functions get variables from models
 		use 'template_args'
+
+## Admin database
+
+flutter project logins:
+username: justin
+email: justinglobal@gmail.com
+pass: brassmonkey

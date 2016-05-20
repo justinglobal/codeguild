@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fluts</title>
+  </head>
+  <body>
+    <h2>Test display fluts</h2>
+    <h3><a href="{% url 'post_page' %}">Post a new flut</a>
+      {% for flut in all_fluts %}
+      <div>
+        <ul>{{ flut }}</ul>
+          <li>{{ flut.text_of_flut }}</li>
+      </div>
+      {% endfor %}
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Post a Flut</title>
+  </head>
+  <body>
+    <h2>Post a Flut</h2>
+    <form action=" {% url 'post_ack' %}" method="post">
+      {% csrf_token %}
+    <label>User Name: <input type="text" name="user_name"></label>
+    <label>Flut text: <textarea type="text" name="text_of_flut"></textarea></label>
+    <input type="submit">
+    </form>
+  </body>
+</html>

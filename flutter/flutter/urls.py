@@ -1,4 +1,4 @@
-"""todo URL Configuration
+"""flutter URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -19,12 +19,10 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.render_index, name='index'),
-    url(r'^delete/(?P<item_name>.+)$', views.delete_item_and_refresh, name="delete_item"),
-    url(r'^item/(?P<task_name>.+)/add$', views.add_item_and_refresh, name='add_item'),
-    url(r'^task/add$', views.add_task_and_refresh, name='add_task'),
-    # url(r'^add$', views.render_index, name='add_task'),
-    # url(r'^submit$', views., name=''),
-    # url(r'^task/(?P<task_id>.+)/submit$', views., name=''),
-    # url(r'^task/(?P<task_id>.+)/delete$', views., name=''),
+    url(r'^flut/index$', views.render_index, name='index'),
+    url(r'^post$', views.render_post_page, name='post_page'),
+    url(r'^post/submit$', views.render_post_ack, name='post_ack')
 ]
+
+  # url(r'^add$', views.render_add_playlist, name='add_playlist'),
+  # url(r'^add/submit$', views.render_add_playlist_ack, name='add_playlist_submit'),
