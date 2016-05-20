@@ -2,16 +2,6 @@ from django.db import models
 
 import datetime
 
-# class UserName(models.Model):
-#     name = models.TextField()
-#
-#     def __str__(self):
-#         return self.name
-#
-#     def __repr__(self):
-#         return 'User(name={!r})'.format(self.name)
-
-
 class Flut(models.Model):
 
     user_name = models.TextField()

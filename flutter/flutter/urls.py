@@ -26,5 +26,3 @@ urlpatterns = [
     url(r'^search$', views.render_text_of_flut_query, name='query'),
     url(r'^(?P<user_name>.+)$', views.render_fluts_by_user, name='user_fluts')
 ]
-
-# / shows the last 10 Flutts.
