@@ -7,12 +7,13 @@
   <body>
     <h2>Test display fluts</h2>
     <h3><a href="{% url 'post_page' %}">Post a new flut</a>
-      {% for flut in all_fluts %}
-      <div>
-        <ul>{{ flut }}</ul>
-          <li>{{ flut.text_of_flut }}</li>
-      </div>
-      {% endfor %}
+    {% for flut in all_fluts %}
+    <div>
+    <ul>Flut info: {{ flut }}</ul>
+      <li>User: {{ flut.user_name }}</li>
+      <li>Flut Text: {{ flut.text_of_flut }}</li>
+    </div>
+    {% endfor %}
 
   </body>
 </html>

@@ -1612,3 +1612,12 @@ flutter project logins:
 username: justin
 email: justinglobal@gmail.com
 pass: brassmonkey
+
+## URL query tips
+
+note on how url queries work:
+
+if URL is: http://127.0.0.1:8000/search?search_query=hats&color=blue
+
+? above makes 'querydict' that looks like this: 
+<QueryDict: {'color': ['blue'], 'search_query': ['hats']}>

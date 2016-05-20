@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>10 Most Recent Fluts</title>
+  </head>
+  <body>
+    <h3>10 Most Recent Fluts</h3>
+    <div><a href="{% url 'index' %}">Go to Flut Index</a></div>
+    {% for Flut in last_ten %}
+    <div>
+        {{ Flut }}
+    </div>
+    {% endfor %}
+  </body>
+</html>

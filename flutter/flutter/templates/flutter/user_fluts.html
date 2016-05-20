@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fluts by user</title>
+  </head>
+  <body>
+    <h3>All fluts by user</h3>
+    <div><a href="{% url 'index' %}">Go to Flut Index</a></div>
+    {% for Flut in fluts_by_user %}
+    <div>
+        {{ Flut }}
+    </div>
+    {% endfor %}
+  </body>
+</html>

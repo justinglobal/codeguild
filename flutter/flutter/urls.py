@@ -19,10 +19,12 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.render_last_ten, name='last_ten'),
     url(r'^flut/index$', views.render_index, name='index'),
     url(r'^post$', views.render_post_page, name='post_page'),
-    url(r'^post/submit$', views.render_post_ack, name='post_ack')
+    url(r'^post/submit$', views.render_post_ack, name='post_ack'),
+    url(r'^search$', views.render_text_of_flut_query, name='query'),
+    url(r'^(?P<user_name>.+)$', views.render_fluts_by_user, name='user_fluts')
 ]
 
-  # url(r'^add$', views.render_add_playlist, name='add_playlist'),
-  # url(r'^add/submit$', views.render_add_playlist_ack, name='add_playlist_submit'),
+# / shows the last 10 Flutts.
